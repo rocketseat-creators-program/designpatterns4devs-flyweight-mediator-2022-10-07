@@ -23,8 +23,8 @@ public class SongService {
             song = getMusicByString(desc);
             userPlayList.put(desc, song);
         }
-        System.out.println(String.format("%s is listening '%s'",
-                user, song.getName()));
+        System.out.printf("%s is listening '%s'%n",
+                user, song.getName());
         song.listening();
     }
 
