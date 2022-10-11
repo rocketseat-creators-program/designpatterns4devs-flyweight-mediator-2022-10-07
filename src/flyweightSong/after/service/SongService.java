@@ -17,19 +17,15 @@ public class SongService {
     }
 
     public void listenMusic(String user, String desc) {
-        Map<String, Song> userPlayList = memory.get(user);
-        if(userPlayList == null) {
-            userPlayList = new HashMap<>();
-            memory.put(user, userPlayList);
-        }
+        Map<String, Song> userPlayList = memory.computeIfAbsent(user, k -> new HashMap<>());
 
         Song song = userPlayList.get(desc);
         if(song == null) {
             song = new Song(FlyweightFactory.getInstance().getMusic(desc));
             userPlayList.put(desc, song);
         }
-        System.out.println(String.format("%s is listenning '%s'",
-                user, song.getMusicFlyweight().getName()));
+        System.out.printf("%s is listening '%s'%n",
+                user, song.getMusicFlyweight().getName());
         song.listening();
     }
 

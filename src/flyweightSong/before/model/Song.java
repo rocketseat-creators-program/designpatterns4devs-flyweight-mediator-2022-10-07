@@ -14,7 +14,7 @@ public class Song {
         this.playerQty = 0;
     }
 
-    public void listenning() {
+    public void listening() {
         playerQty++;
     }
 

@@ -25,7 +25,7 @@ public class SongService {
         }
         System.out.println(String.format("%s is listening '%s'",
                 user, song.getName()));
-        song.listenning();
+        song.listening();
     }
 
     private Song getMusicByString(String desc) {
