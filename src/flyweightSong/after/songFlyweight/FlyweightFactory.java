@@ -28,7 +28,7 @@ public class FlyweightFactory {
 
     private SongFlyweight getSongByString(String desc) {
         String[] songData = desc.split(";");
-        return new SongFlyweight(songData[0], songData[1], new Integer(songData[2]));
+        return new SongFlyweight(songData[0], songData[1], Integer.valueOf(songData[2]));
     }
 
     public Integer getSize() {

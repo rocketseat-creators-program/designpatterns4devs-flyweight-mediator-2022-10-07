@@ -37,13 +37,13 @@ public class SongService {
             System.out.println(user + " has listen...");
             Collection<Song> musics = memory.get(user).values();
             for(Song music: musics) {
-                System.out.println(String.format("%s/%s %d times",
+                System.out.printf("%s/%s %d times%n",
                         music.getMusicFlyweight().getArtist(),
                         music.getMusicFlyweight().getName(),
-                        music.getPlayerQty()));
+                        music.getPlayerQty());
                 timeCounter += (music.getPlayerQty() * music.getMusicFlyweight().getDurationInSeconds());
             }
-            System.out.println(String.format("%s has listen music for %d seconds", user, timeCounter));
+            System.out.printf("%s has listen music for %d seconds%n", user, timeCounter);
         }
         System.out.println("Total of musics in flyWeight's memory: " + FlyweightFactory.getInstance().getSize());
     }

@@ -30,7 +30,7 @@ public class SongService {
 
     private Song getMusicByString(String desc) {
         String[] musicData = desc.split(";");
-        return new Song(musicData[0], musicData[1], new Integer(musicData[2]));
+        return new Song(musicData[0], musicData[1], Integer.valueOf(musicData[2]));
     }
 
     public void report() {
