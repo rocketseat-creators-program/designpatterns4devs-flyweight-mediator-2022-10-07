@@ -17,13 +17,13 @@ public class FlyweightFactory {
     }
 
     public SongFlyweight getMusic(String desc) {
-        SongFlyweight mf = songFlyweightRepository.get(desc);
-        if(mf == null) {
+        SongFlyweight songFlyweight = songFlyweightRepository.get(desc);
+        if(songFlyweight == null) {
             System.out.println("Creating new Flyweight for " + desc);
-            mf = getSongByString(desc);
-            songFlyweightRepository.put(desc, mf);
+            songFlyweight = getSongByString(desc);
+            songFlyweightRepository.put(desc, songFlyweight);
         }
-        return mf;
+        return songFlyweight;
     }
 
     private SongFlyweight getSongByString(String desc) {
